@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 93cb8b57bad9fd64dadba02e30f3ec5a
+guid: 54c14dc6d589be14295c5e939088ff69
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 2207850806306222022
-    second: Dash
+    second: GoalPoseShort
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Dash
+      name: GoalPoseShort
       takeName: Noesis Frames
       internalID: 0
       firstFrame: 0
-      lastFrame: 20
+      lastFrame: 232
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -75,7 +75,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    fileIdsGeneration: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -127,7 +127,7 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

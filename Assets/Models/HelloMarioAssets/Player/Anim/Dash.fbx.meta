@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: a6ef41f2b994a95458810445d7566556
+guid: 93cb8b57bad9fd64dadba02e30f3ec5a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: 2207850806306222022
-    second: Wait
+    second: Dash
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,18 +35,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Wait
+      name: Dash
       takeName: Noesis Frames
       internalID: 0
       firstFrame: 0
-      lastFrame: 360
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

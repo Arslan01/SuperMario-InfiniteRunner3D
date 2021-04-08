@@ -39,6 +39,18 @@ public class GameManager : MonoBehaviour
         anim = player.gameObject.GetComponent<Animator>();
 
         targetPosition = waypoints[idWaypoint].position;
+
+        if(FadeInOut._instance != null) 
+        {
+            FadeInOut._instance.Fade();
+            StartCoroutine("StartStage");
+        }
+        else
+        {
+            currentState = GameState.GAMEPLAY;
+            isWalk = true;
+        }
+        
     }
 
     void Update()
@@ -76,6 +88,13 @@ public class GameManager : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.3f, whatIsGround);
     }
 
+    IEnumerator StartStage()
+    {
+        yield return new WaitUntil(() => FadeInOut._instance.isFadeComplete);
+        currentState = GameState.GAMEPLAY;
+        anim.SetBool("isWalk", true);
+    }
+    
     public void  Jump()
     {
         if(isGrounded == false) { return; }
@@ -97,7 +116,6 @@ public class GameManager : MonoBehaviour
 
     void UpdateAnimator()
     {
-        anim.SetBool("isWalk", isWalk);
         anim.SetBool("isGrounded", isGrounded);
     }
 }

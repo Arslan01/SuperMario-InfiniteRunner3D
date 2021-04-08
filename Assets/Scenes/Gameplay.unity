@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: d146e924a7ef3c244b17f23950653385, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -655,7 +655,6 @@ MonoBehaviour:
   movementSpeed: 5
   changeWaySpeed: 5
   jumpForce: 400
-  isWalk: 0
   groundCheck: {fileID: 701668564}
   whatIsGround:
     serializedVersion: 2

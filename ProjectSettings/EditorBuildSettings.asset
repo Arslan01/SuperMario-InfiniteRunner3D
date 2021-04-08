@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/Fade.unity
+    guid: fb46316e95717d34e893d0c59428be3f
+  - enabled: 1
+    path: Assets/Scenes/pressStart 1.unity
+    guid: 9bbd914c101c77643af734b8ec104a91
+  - enabled: 1
+    path: Assets/Scenes/Gameplay.unity
+    guid: eee9c1bff0f010042b90ab58c39efb5a
   m_configObjects: {}

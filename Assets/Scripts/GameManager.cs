@@ -9,6 +9,8 @@ public enum GameState
 }
 public class GameManager : MonoBehaviour
 {
+    public static GameManager _instance;
+
     //[HideInInspector]
     public GameState currentState;
 
@@ -33,12 +35,37 @@ public class GameManager : MonoBehaviour
     public Transform[] waypoints;
     private Vector3 targetPosition;
 
+    [Header("Stage Blocks")]
+    private int blocks;
+    public int startBlocks;
+    public float blockSize;
+    public GameObject[] stageBlock;
+    public Transform stagePosition;
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        _instance = this;
+
+        blocks = 1;
+    }
+
     void Start()
     {
         rb = player.gameObject.GetComponent<Rigidbody>();
         anim = player.gameObject.GetComponent<Animator>();
 
         targetPosition = waypoints[idWaypoint].position;
+
+        for(int i = 0; i < startBlocks; i++)
+        {
+            NewBlock();
+        }
+
 
         if(FadeInOut._instance != null) 
         {
@@ -48,7 +75,7 @@ public class GameManager : MonoBehaviour
         else
         {
             currentState = GameState.GAMEPLAY;
-            isWalk = true;
+            anim.SetBool("isWalk", true);
         }
         
     }
@@ -117,5 +144,12 @@ public class GameManager : MonoBehaviour
     void UpdateAnimator()
     {
         anim.SetBool("isGrounded", isGrounded);
+    }
+
+    public void NewBlock()
+    {
+        int idBlock = 0;
+        GameObject temp = Instantiate(stageBlock[idBlock], stagePosition.position + Vector3.forward * (blocks * blockSize), Quaternion.identity, stagePosition);
+        blocks++;
     }
 }

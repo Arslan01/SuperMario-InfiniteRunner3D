@@ -659,10 +659,12 @@ MonoBehaviour:
   - {fileID: 1293849815}
   - {fileID: 944908777}
   - {fileID: 1292364581}
-  startBlocks: 2
+  startBlocks: 3
   blockSize: 15
   stageBlock:
   - {fileID: 2729632524954751237, guid: 73a3636314509534b988f1f8cc4787cf, type: 3}
+  - {fileID: 2729632524954751237, guid: 193bee01a499e0c44b57fe6a89342098, type: 3}
+  - {fileID: 2729632524954751237, guid: 92486cb5858c7b048b549e97cd404b0f, type: 3}
   stagePosition: {fileID: 1628445252}
 --- !u!4 &1607903149
 Transform:

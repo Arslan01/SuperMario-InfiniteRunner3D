@@ -148,8 +148,21 @@ public class GameManager : MonoBehaviour
 
     public void NewBlock()
     {
-        int idBlock = 0;
+        int idBlock = Random.Range(0, stageBlock.Length);
         GameObject temp = Instantiate(stageBlock[idBlock], stagePosition.position + Vector3.forward * (blocks * blockSize), Quaternion.identity, stagePosition);
         blocks++;
+    }
+
+    public void Die()
+    {
+        currentState = GameState.DIE;
+        anim.SetTrigger("Die");
+        StartCoroutine("Died");
+    }
+
+    IEnumerator Died()
+    {
+        yield return new WaitForSeconds(3);
+        FadeInOut._instance.Fade();
     }
 }

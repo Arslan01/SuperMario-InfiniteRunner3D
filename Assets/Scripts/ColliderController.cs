@@ -9,6 +9,11 @@ public class ColliderController : MonoBehaviour
         switch(other.gameObject.tag)
         {
             case "Collectable":
+
+                Collectable item = other.gameObject.GetComponent<Collectable>();
+                GameManager._instance.GetItem(item.type);
+                Destroy(other.gameObject);
+
                 break;
 
             case "Danger":

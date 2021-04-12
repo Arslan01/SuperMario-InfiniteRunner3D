@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public enum GameState
 {
     WAIT, GAMEPLAY, DIE
+}
+
+public enum ItemType
+{
+    COIN, REDCOIN
 }
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +19,13 @@ public class GameManager : MonoBehaviour
 
     //[HideInInspector]
     public GameState currentState;
+
+    [Header("HUD")]
+    public Text scoreTxt;
+    public Text distanceTxt;
+
+    private int score;
+    private int distance;
 
     [Header("Player Config")]
     public Transform    player;
@@ -108,6 +121,10 @@ public class GameManager : MonoBehaviour
         movement = new Vector3(0, rb.velocity.y, movementSpeed);
 
         rb.velocity = movement;
+
+        distance = Mathf.RoundToInt(Vector3.Distance(player.position, stagePosition.position));
+
+        UpdateHud();
     }
 
     private void FixedUpdate()
@@ -164,5 +181,30 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         FadeInOut._instance.Fade();
+    }
+
+    public void GetItem(ItemType type)
+    {
+
+        switch(type)
+        {
+            case ItemType.COIN:
+
+                score += 100;
+
+                break;
+
+            case ItemType.REDCOIN:
+
+                score += 500;
+
+                break;
+        }
+    }
+
+    void UpdateHud()
+    {
+        scoreTxt.text = score.ToString("N0");
+        distanceTxt.text = distance.ToString("N0") + " m";
     }
 }

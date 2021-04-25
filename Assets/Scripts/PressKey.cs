@@ -28,12 +28,16 @@ public class PressKey : MonoBehaviour
     {
         isStart = true;
         anim.SetTrigger("StartGame");
+        yield return new WaitForSeconds(2.5f);
+        AudioManager._instance.PlayFX(AudioManager._instance.fxStart);
 
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(2f);
         FadeInOut._instance.Fade();
+        AudioManager._instance.StartCoroutine("PlayMusicGameplay");
         yield return new WaitForEndOfFrame();
 
         yield return new WaitUntil(() => FadeInOut._instance.isFadeComplete);
+        AudioManager._instance.PlayFX(AudioManager._instance.fxIntro);
         FadeInOut._instance.GoScene("Gameplay");
     }
 }

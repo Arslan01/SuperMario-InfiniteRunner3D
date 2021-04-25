@@ -142,6 +142,7 @@ public class GameManager : MonoBehaviour
     public void  Jump()
     {
         if(isGrounded == false) { return; }
+        AudioManager._instance.PlayFX(AudioManager._instance.fxJump);
         rb.AddForce(Vector3.up * jumpForce);
     }
 
@@ -191,12 +192,14 @@ public class GameManager : MonoBehaviour
             case ItemType.COIN:
 
                 score += 100;
+                AudioManager._instance.PlayFX(AudioManager._instance.fxCoin);
 
                 break;
 
             case ItemType.REDCOIN:
 
                 score += 500;
+                AudioManager._instance.PlayFX(AudioManager._instance.fxCoin);
 
                 break;
         }

@@ -11,7 +11,7 @@ public enum GameState
 
 public enum ItemType
 {
-    COIN, REDCOIN
+    COIN, REDCOIN, STAR
 }
 public class GameManager : MonoBehaviour
 {
@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Player Config")]
     public Transform    player;
+    public Transform    collectableTarget;
+    public Transform    powerUpSensor;
+
     private Rigidbody   rb; 
     private Animator    anim;
 
@@ -74,6 +77,8 @@ public class GameManager : MonoBehaviour
 
         targetPosition = waypoints[idWaypoint].position;
 
+        powerUpSensor.gameObject.SetActive(false);
+
         for(int i = 0; i < startBlocks; i++)
         {
             NewBlock();
@@ -118,6 +123,8 @@ public class GameManager : MonoBehaviour
         targetPosition = new Vector3(waypoints[idWaypoint].position.x, player.position.y, player.position.z);
 
         player.position = Vector3.MoveTowards(player.position, targetPosition, changeWaySpeed * Time.deltaTime);
+        powerUpSensor.position = player.position;
+
         movement = new Vector3(0, rb.velocity.y, movementSpeed);
 
         rb.velocity = movement;
@@ -202,6 +209,12 @@ public class GameManager : MonoBehaviour
                 AudioManager._instance.PlayFX(AudioManager._instance.fxCoin);
 
                 break;
+
+            case ItemType.STAR:
+
+                StartCoroutine("SuperStar");
+
+                break;
         }
     }
 
@@ -209,5 +222,12 @@ public class GameManager : MonoBehaviour
     {
         scoreTxt.text = score.ToString("N0");
         distanceTxt.text = distance.ToString("N0") + " m";
+    }
+
+    IEnumerator SuperStar()
+    {
+        powerUpSensor.gameObject.SetActive(true);
+        yield return new WaitForSeconds(10);
+        powerUpSensor.gameObject.SetActive(false);
     }
 }

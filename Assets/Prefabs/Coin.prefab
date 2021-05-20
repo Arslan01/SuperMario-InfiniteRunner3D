@@ -38,8 +38,20 @@ PrefabInstance:
       value: Coin
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f49e2fdd06cf68d448a06e7cfe3d2f6e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f49e2fdd06cf68d448a06e7cfe3d2f6e, type: 3}
       propertyPath: m_TagString
       value: Collectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: f49e2fdd06cf68d448a06e7cfe3d2f6e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: f49e2fdd06cf68d448a06e7cfe3d2f6e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f49e2fdd06cf68d448a06e7cfe3d2f6e, type: 3}
       propertyPath: m_RootOrder

@@ -184,6 +184,8 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
+        rb.useGravity = false;
+        rb.velocity = Vector3.zero;
         currentState = GameState.DIE;
         anim.SetTrigger("Die");
         StartCoroutine("Died");

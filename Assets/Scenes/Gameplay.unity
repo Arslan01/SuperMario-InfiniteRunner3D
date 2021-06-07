@@ -1146,10 +1146,11 @@ MonoBehaviour:
   startBlocks: 3
   blockSize: 15
   stageBlock:
-  - {fileID: 2729632524954751237, guid: 73a3636314509534b988f1f8cc4787cf, type: 3}
   - {fileID: 2729632524954751237, guid: 193bee01a499e0c44b57fe6a89342098, type: 3}
-  - {fileID: 2729632524954751237, guid: 92486cb5858c7b048b549e97cd404b0f, type: 3}
+  - {fileID: 2729632524954751237, guid: 6da9d7ce597dd044ea8de93d45a33ca7, type: 3}
   stagePosition: {fileID: 1628445252}
+  isPowerUp: 0
+  percPowerUp: 25
 --- !u!4 &1607903149
 Transform:
   m_ObjectHideFlags: 0

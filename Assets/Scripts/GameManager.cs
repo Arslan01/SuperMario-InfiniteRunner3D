@@ -57,6 +57,10 @@ public class GameManager : MonoBehaviour
     public float blockSize;
     public GameObject[] stageBlock;
     public Transform stagePosition;
+
+    [Header("PowerUps")]
+    public bool isPowerUp;
+    public float percPowerUp;
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -199,20 +203,30 @@ public class GameManager : MonoBehaviour
             case ItemType.COIN:
 
                 score += 100;
-                AudioManager._instance.PlayFX(AudioManager._instance.fxCoin);
-
+                if (AudioManager._instance != null)
+                {
+                    AudioManager._instance.PlayFX(AudioManager._instance.fxCoin);
+                }
                 break;
 
             case ItemType.REDCOIN:
 
                 score += 500;
-                AudioManager._instance.PlayFX(AudioManager._instance.fxCoin);
-
+                if (AudioManager._instance != null)
+                {
+                    AudioManager._instance.PlayFX(AudioManager._instance.fxCoin);
+                }
                 break;
 
             case ItemType.STAR:
-
+                if (AudioManager._instance != null)
+                {
+                    AudioManager._instance.PlayFX(AudioManager._instance.fxCoin);
+                    AudioManager._instance.PlayMusic(AudioManager._instance.PowerUp, false);
+                }
+                isPowerUp = true;
                 StartCoroutine("SuperStar");
+                score += 1500;
 
                 break;
         }
@@ -227,7 +241,9 @@ public class GameManager : MonoBehaviour
     IEnumerator SuperStar()
     {
         powerUpSensor.gameObject.SetActive(true);
-        yield return new WaitForSeconds(10);
+        yield return new WaitUntil(() => !AudioManager._instance.Music.isPlaying);
+        isPowerUp = false;
         powerUpSensor.gameObject.SetActive(false);
+        AudioManager._instance.PlayMusic(AudioManager._instance.LoopStage, true);
     }
 }

@@ -184,6 +184,21 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
+        PlayerPrefs.SetInt("score", score);
+        PlayerPrefs.SetInt("distance", distance);
+
+        AudioManager._instance.PlayMusic(AudioManager._instance.LostLife, false);
+
+        if(score > PlayerPrefs.GetInt("Score"))
+        {
+            PlayerPrefs.SetInt("Score", score);
+        }
+
+        if(distance > PlayerPrefs.GetInt("Distance"))
+        {
+            PlayerPrefs.SetInt("Distance", distance);
+        }
+
         rb.useGravity = false;
         rb.velocity = Vector3.zero;
         currentState = GameState.DIE;
@@ -195,6 +210,9 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         FadeInOut._instance.Fade();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitUntil(() => FadeInOut._instance.isFadeComplete);
+        FadeInOut._instance.GoScene("GameOver");
     }
 
     public void GetItem(ItemType type)

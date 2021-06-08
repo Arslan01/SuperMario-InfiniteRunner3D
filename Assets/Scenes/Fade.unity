@@ -972,6 +972,7 @@ MonoBehaviour:
   IntroStage: {fileID: 8300000, guid: 3c598357d83b17447892f57f1ae8e62d, type: 3}
   LoopStage: {fileID: 8300000, guid: 1a1ad2151ed29bb4cb0581c1f3a8cb98, type: 3}
   GameOver: {fileID: 8300000, guid: 56a1a6b61edc5494db7926683272e9ef, type: 3}
+  LostLife: {fileID: 8300000, guid: 6e44635d7dec6b24eaaa6cc5931dd6b4, type: 3}
   PlayAgain: {fileID: 8300000, guid: 0457804711f01a243921a48818978e3e, type: 3}
   PowerUp: {fileID: 8300000, guid: 80ae063f53fcf8b45bd83f4eb23c450c, type: 3}
   fxCoin: {fileID: 8300000, guid: 1267cdf3bc3c6df4cbade97bc56eea2a, type: 3}

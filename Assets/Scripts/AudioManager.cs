@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip IntroStage;
     public AudioClip LoopStage;
     public AudioClip GameOver;
+    public AudioClip LostLife;
     public AudioClip PlayAgain;
     public AudioClip PowerUp;
 

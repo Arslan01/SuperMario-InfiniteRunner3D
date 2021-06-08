@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PressKey : MonoBehaviour
 {
     public Animator anim;
     private bool isStart;
+
+    public Text Score;
+    public Text Distance;
     // Start is called before the first frame update
     void Start()
     {
+        Score.text = "Score: " + PlayerPrefs.GetInt("Score").ToString("N0");
+        Distance.text = "Distance: " + PlayerPrefs.GetInt("Distance").ToString("N0") + "m";
+
+
         if (FadeInOut._instance != null)
         {
             FadeInOut._instance.Fade();

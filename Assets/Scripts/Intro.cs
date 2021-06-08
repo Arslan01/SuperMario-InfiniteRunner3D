@@ -22,7 +22,7 @@ public class Intro : MonoBehaviour
         AudioManager._instance.PlayFX(AudioManager._instance.fxItsMe);
 
         yield return new WaitUntil(() => FadeInOut._instance.isFadeComplete);
-        FadeInOut._instance.GoScene("pressStart 1");
+        FadeInOut._instance.GoScene("PressStart");
     }
 
 }

@@ -83,10 +83,10 @@ public class GameManager : MonoBehaviour
 
         powerUpSensor.gameObject.SetActive(false);
 
-        for(int i = 0; i < startBlocks; i++)
+       /* for(int i = 0; i < startBlocks; i++)
         {
             NewBlock();
-        }
+        }*/
 
 
         if(FadeInOut._instance != null) 

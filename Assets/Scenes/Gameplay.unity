@@ -577,6 +577,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartStage
       objectReference: {fileID: 0}
+    - target: {fileID: 3268441336208592349, guid: 69d909c31e6aa6949945e7848a152adb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6472226968845389711, guid: 69d909c31e6aa6949945e7848a152adb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69d909c31e6aa6949945e7848a152adb, type: 3}
 --- !u!1 &839654009
@@ -1164,38 +1172,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1607903147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f3662d6ad0e2b64c8758e5ec269d2d7, type: 3}
+  m_Script: {fileID: 11500000, guid: cc65d6dc334fe3b43a253b370961d1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 1
+  currentState: 0
   scoreTxt: {fileID: 839654011}
   distanceTxt: {fileID: 715174393}
   player: {fileID: 1885335132137998235}
   collectableTarget: {fileID: 273768314}
-  powerUpSensor: {fileID: 65640799}
+  powerUpSensor: {fileID: 625942784}
   movementSpeed: 5
-  changeWaySpeed: 5
-  jumpForce: 500
+  changeWaySpeed: 2
+  jumpForce: 10
   groundCheck: {fileID: 2805485260877480393}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1
   idWaypoint: 1
   waypoints:
-  - {fileID: 1293849815}
   - {fileID: 944908777}
   - {fileID: 1292364581}
-  startBlocks: 8
-  blockSize: 15
+  - {fileID: 1293849815}
+  startBlocks: 5
+  blockSize: 10
   stageBlock:
-  - {fileID: 2729632524954751237, guid: 193bee01a499e0c44b57fe6a89342098, type: 3}
-  - {fileID: 2729632524954751237, guid: 6da9d7ce597dd044ea8de93d45a33ca7, type: 3}
-  - {fileID: 2729632524954751237, guid: 8fa4b304398f3e84c87fbca19152b105, type: 3}
-  - {fileID: 2729632524954751237, guid: 4f6625798fe34f64baf4f53e5da29e44, type: 3}
-  - {fileID: 2729632524954751237, guid: a0fb477dd1ac3d34d8b2c157dcae28bb, type: 3}
+  - {fileID: 1628445251}
   stagePosition: {fileID: 1628445252}
   isPowerUp: 0
-  percPowerUp: 25
+  percPowerUp: 5
 --- !u!4 &1607903149
 Transform:
   m_ObjectHideFlags: 0
